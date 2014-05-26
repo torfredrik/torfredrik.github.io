@@ -4,8 +4,6 @@
 	color: black;
 	height: 200px;
 	position:fixed;
-	top:30;
-	right:30;
 	/* width and height can be anything, as long as they're equal */
 }
 #box {
