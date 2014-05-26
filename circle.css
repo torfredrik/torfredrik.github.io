@@ -1,9 +1,13 @@
 .circle {
 	border-radius: 50%;
 	width: 200px;
-	color: black;
 	height: 200px;
 	position:fixed;
+	border-radius:50px;
+	font-size:20px;
+	color:#fff;
+	line-height:100px;
+	background:#000
 	/* width and height can be anything, as long as they're equal */
 }
 #box {
