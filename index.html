@@ -6,12 +6,14 @@ window.onscroll = scroll;
 
 function scroll () {
 	var circle = document.querySelector(".circle");
-	circle.left = circle.left + window.pageYOffset;
-	console.log("scroll event detected! " + window.pageXOffset + " " + window.pageYOffset);
+	var movement = window.pageYOffset;
+	var newPosition = circle.left + movement;
+	console.log("Moving circle from" + circle.left + " to " + newPosition);
+	circle.left = newPosition;
  	// note: you can use window.innerWidth and window.innerHeight to access the width and height of the viewing area
 }
 </script>
 </head>
-<div class="circle" top="30" left="30"></div>
+<div class="circle"></div>
 <div id="box"></div>
 </html>
