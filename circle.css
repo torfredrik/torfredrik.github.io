@@ -1,6 +1,7 @@
 .circle {
 	border-radius: 50%;
 	width: 200px;
+	color: black;
 	height: 200px;
 	position:fixed;
 	top:30;
