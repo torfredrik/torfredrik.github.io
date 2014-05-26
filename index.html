@@ -5,23 +5,41 @@
 window.onscroll = scroll;
 
 function scroll () {
-	var circle = document.querySelector(".circle");
-	var position = getLeft(circle);
-	var movement = window.pageYOffset;
-	var newPosition = circle.left + movement;
-	console.log("Moving circle from" + circle.left + " to " + newPosition);
-	setLeft(circle, newPosition);
+	var circle = document.querySelector("#circle");
+	console.log(circle);
+	var movement = window.pageYOffset % (2*window.innerWidth + 2*window.innerHeight - 120);
+	if (movement > window.innerWidth*2+window.innerHeight - 120) {
+		var value = window.innerHeight - (movement + 120 - 2*window.innerWidth - window.innerHeight); 
+		console.log("setting top to " + value);
+		circle.style.top = value + "px";
+	}
+	else if (movement > window.innerWidth+window.innerHeight - 120) {
+		var value = window.innerWidth - (movement + 120 - window.innerWidth - window.innerHeight);
+		console.log("setting left to " + value);
+		circle.style.left = value + "px";
+	}
+	else if (movement > window.innerWidth-60) {
+		var value = movement - window.innerWidth + 60; 
+		console.log("setting top to " + value);
+		circle.style.top = value + "px";
+	}
+	else {
+		var value = movement; 
+		console.log("setting left to " + value);
+		circle.style.left = value + "px";
+	}
  	// note: you can use window.innerWidth and window.innerHeight to access the width and height of the viewing area
 }
-var left = /left:(\d+)px;/
-function getLeft(elem){
-	return parseInt(elem.style.left);
-}
-function setLeft(elem, newValue) {
-	elem.style.left = newValue;
+var re = /(\d+)px;/;
+function getLeft(elem) {
+	var leftStyle = elem.style.left;
+	if (leftStyle) {
+		return parseInt(leftStyle);
+	}
+	return 10;
 }
 </script>
 </head>
-<div class="circle"></div>
+<div id="circle"></div>
 <div id="box"></div>
 </html>
