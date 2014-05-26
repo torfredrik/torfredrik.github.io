@@ -6,7 +6,9 @@
 	font-size:20px;
 	color:#fff;
 	line-height:100px;
-	background:#000
+	background:#000;
+	top:10;
+	left:10;
 	/* width and height can be anything, as long as they're equal */
 }
 #box {

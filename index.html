@@ -6,11 +6,19 @@ window.onscroll = scroll;
 
 function scroll () {
 	var circle = document.querySelector(".circle");
+	var position = getLeft(circle);
 	var movement = window.pageYOffset;
 	var newPosition = circle.left + movement;
 	console.log("Moving circle from" + circle.left + " to " + newPosition);
-	circle.left = newPosition;
+	setLeft(circle, newPosition);
  	// note: you can use window.innerWidth and window.innerHeight to access the width and height of the viewing area
+}
+var left = /left:(\d+)px;/
+function getLeft(elem){
+	return parseInt(elem.style.left);
+}
+function setLeft(elem, newValue) {
+	elem.style.left = newValue;
 }
 </script>
 </head>
