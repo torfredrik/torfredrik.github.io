@@ -1,0 +1,17 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="circle.css" />
+<script type="text/javascript">
+window.onscroll = scroll;
+
+function scroll () {
+	var circle = document.querySelector(".circle");
+	circle.left = circle.left + window.pageYOffset;
+	console.log("scroll event detected! " + window.pageXOffset + " " + window.pageYOffset);
+ 	// note: you can use window.innerWidth and window.innerHeight to access the width and height of the viewing area
+}
+</script>
+</head>
+<div class="circle"></div>
+<div id="box"></div>
+</html>

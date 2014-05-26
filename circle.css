@@ -1,0 +1,13 @@
+.circle {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	position:fixed;
+	top:30;
+	right:30;
+	/* width and height can be anything, as long as they're equal */
+}
+#box {
+	height:3000;
+	overflow:scroll;
+}
